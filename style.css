@@ -1,0 +1,999 @@
+/*
+ *
+ *   Theme Name: totor.com
+ *   Theme URI:
+ *   Description: My website Wordpress theme
+ *   Author: totor59 --- https://github.com/totor59
+ *   Author URI: victormarechal59@gmail.com
+ *   Version: 1.0
+ *   
+ */
+
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+	resize: vertical;
+}
+
+/* ==========================================================================
+Browser Upgrade Prompt
+========================================================================== */
+
+.browserupgrade {
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
+}
+
+/* ==========================================================================
+Author's custom style
+========================================================================== */
+
+/* ==========================================================================
+Fonts
+========================================================================== */
+@font-face {
+	font-family: Devicon;
+	src: url(../fonts/devicon.woff);
+	font-weight: bold;
+}
+* { 
+	font-family: 'Ubuntu', sans-serif;
+}
+* figcaption,
+* button  {
+	font-weight: bold;
+}
+* h3,
+* legend,
+* span {
+	font-weight: medium;
+}
+* a {
+	font-weight: normal;
+}
+* p,
+* input {
+	font-weight: light;
+}
+
+	
+
+/* ==========================================================================
+General
+========================================================================== */
+html {
+	min-height: 100%;
+	position: relative;
+	color: #585858;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+body {
+	padding: 0;
+	margin: 0 o 40px 0;
+	font-size: 14px;
+}
+main {
+	width: 90%;
+	margin: 80px 5% 50px 5%;
+}
+ul {
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+a { 
+	text-decoration: none;
+	color: #585858;
+}
+.current_page_item a {
+	color: #4285F4;
+}
+.current_page_item a:hover {
+	text-decoration: underline;
+}
+
+img[src*="icon"] {
+	opacity: 0.7;
+	transition: 1s;
+}
+img[src*="icon"]:hover {
+	opacity: 1;
+	transition: 1s;
+}
+legend {	
+	color: #006621;
+	margin: 20px 0 5px 0;
+	font-size: 16px;
+	font-weight: bold;
+}
+.cvbutton,
+.older,
+button {
+	border:2px solid #df0909;
+	border-radius: 10px;
+	font-size: 18px;
+	line-height: 30px;
+	margin: 5px 0;
+	color: #df0909;
+	background-color: #FFF;
+	opacity: 0.7;
+	font-weight: bold;
+	transition: 1s;
+}
+.older,
+.cvbutton:hover,
+button:hover {
+	border:2px solid #b30808;
+	color: #b30808;
+	opacity: 1;
+	transition: 1s;
+}
+
+/* ==========================================================================
+Header General
+========================================================================== */
+header {
+	display:none;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 100;	
+	box-shadow: 1px 1px 10px gray;
+}
+.subnav {
+	border-bottom: 1px solid #E5E5E5;
+	background-color: #fff;
+	margin: 0;
+	padding-top: 4px;
+	height: 60px;
+	background-color: #F1F1F1;
+	display: flex;
+	font-size: 18px;
+}
+.subnav ul li {
+	display: inline;
+	margin: 0;
+}
+.desktop-menu ul {
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: no-wrap;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+}
+.desktop-menu { 
+	width: 80%;
+}
+.desktop-menu li a {
+	font-weight: bold;
+}
+.links {
+	width: 20%;
+	margin: 0;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+img[src*="logo"] {
+	display: inline-block;
+	height: 40px;
+	margin: 10px 14px;
+}
+
+/* Menu Mobile */
+.mobilemenu,
+.mobilemenu li {
+	padding: 0;
+	margin: 0;
+}
+.navmobile li:last-child  {	
+	box-shadow: 0px 4px 10px -10px gray;
+}
+.mobilemenu {
+	height: 60px;
+	background-color: #F1F1F1;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+	border-bottom: 1px solid #E5E5E5;
+	box-shadow: 1px 1px 10px gray;
+}
+.btn {
+	cursor: pointer;
+	margin: 14px;
+	float: right;
+}
+#nav {
+	display: block;
+	visibility: hidden;
+}
+#btnMenu:focus + #nav {
+	visibility: visible;
+}
+.navmobile ul {
+	position: fixed;
+	top: 60px;
+	width: 100%;
+	-webkit-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.navmobile li {
+	display: block;
+	width: 100%;
+	text-align: center;
+	line-height: 50px;
+	border-bottom: 2px solid #F1F1F1;
+	background-color: #fff;
+}
+.navmobile li a {
+	display: block;
+}
+.navmobile li:first-child {
+	border-top: 2px solid #F1F1F1;
+}
+.navmobile > ul > li:hover > a {
+	color: #fff;
+	font-size: 1.05rem;
+	font-weight: bold;
+}
+.navmobile > ul > li:hover {
+	background: #4285F4;
+	line-height: 55px;
+	-webkit-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+
+}
+.mobile-menu .current_page_item {
+	background-color: #4285f4;
+	line-height: 55px;
+	-webkit-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+.mobile-menu .current_page_item a {
+	color: #fff;
+}
+.mobile-menu li a {
+	font-weight: bold;
+}
+
+/* ==========================================================================
+Footer
+========================================================================== */
+
+footer {
+	height: 40px;
+	background-color: #F2F2F2;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+footer p {
+	width: 100%;
+	text-align: center;
+}
+
+
+/* ==========================================================================
+Portfolio
+========================================================================== */
+
+
+.portfolio {
+	background-color: #F1F1F1;
+	border-radius: 10px;
+       /* padding: 10px;*/
+
+}
+.thumbnails {
+	width: 80vw;
+	height: 80vw;
+	overflow: hidden;
+	margin: 20px 0;
+	padding: 0;
+	position: relative;
+	border-radius: 10px;
+	border: 1px solid #757575;
+
+}
+
+.thumbnails img {
+	width: 100%;
+	overflow: hidden;
+	z-index: 0;
+	border-radius: 10px;
+}
+.thumbnails figcaption {
+	line-height: 60px;
+	width: 100%;
+	background-color: rgba(241, 241, 241, 0.9);
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	border-top: 1px solid #424242;
+	border-radius: 0 0 10px 10px;
+	color: #424242;
+	font-size: 18px;
+}
+.thumbnails figcaption p {
+	margin-left: 8px;
+}
+
+
+
+
+/* ==========================================================================
+About
+========================================================================== */
+main figure:hover {
+	transition: 1s;
+	box-shadow: 4px 4px 15px gray;
+	 }
+.mail, .social-links,
+.about figure {
+	width: 100%;
+	border-radius: 10px;
+	background-color: #F1F1F1;
+	box-shadow: 1px 1px 5px gray;
+	transition: 1s;
+
+}
+.blogarticle,
+.blogindex {
+	border-radius: 10px;
+	background-color: #F1F1F1;
+	box-shadow: 1px 1px 5px gray;
+	transition: 1s;
+	margin: 0;
+}
+.contact figure figcaption,
+.about figure figcaption {
+	padding: 10px;
+}
+.blog figure figcaption,
+.about figure figcaption, h2 {
+	background-color: #F1F1F1;
+	border-radius: 10px;
+	color: #4285F4;
+	font-size: 22px;
+}
+
+h2, .content figcaption,
+.blog figcaption,
+.wiki figcaption,
+.mobilelinks figcaption,
+.skillfigure figcaption {
+	text-decoration: underline;
+}
+
+/* Article principal */
+.left, .right {
+	width: 100%;
+}
+.left {
+	order: -1;
+}
+.wiki {
+	margin-left: 0;
+}
+.job {
+	color: #006621;
+}
+.wiki p, .wiki h3 {
+	margin: 0 15px;
+}
+.wiki a {
+	color: #1A0DAB;
+}
+.wiki span {
+	font-weight: bold;
+color: #4285f4;
+}
+.wikilinks {
+	padding:5px 0 10px 0;
+}
+.wiki a:hover {
+	color: #1A0DAB;
+	text-decoration: underline;
+}
+/* Aside */
+.portrait {
+	min-height: 0;
+	min-width: 0;
+	max-height: 400px;
+	border-radius: 10px;
+	width: 90%;
+	height: 90%;
+	margin: 5% 5% 0 5%;
+}
+.img-container {
+	margin: 0;
+	padding: 10;
+}
+.img-container ul {
+	padding: 10px;
+}
+.img-container span {
+	line-height: 30px;
+}
+/* Twitter */
+.twitter {
+	display:none;
+	margin: 0;	
+	padding-bottom: 10px;
+}
+.twitter figcaption h2 {
+	text-decoration: underline;
+	display: inline-block;
+	margin: 0;
+}
+.twitter figcaption span {
+	font-size: 14px;
+	color: #585858;
+
+}
+.twitter-timeline {
+	background-color: #F1F1F1;
+
+}
+/* Liens mobile */
+.mobilelinks {
+	display: block;
+	margin:0;
+	padding-bottom: 10px;
+}
+.mobilelinks ul {
+	width: 90%;
+	margin:0 5%;
+}
+.mobilelinks ul li {
+	margin: 10px 0;
+}
+
+
+/* Skills bars */
+.skillfigure {
+	margin: 0;
+
+}
+.skillflexcontent {
+	width: 90%;
+	margin: 0 5%;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	text-align: justify;
+	margin: 0 auto 30px auto;
+}
+.skill {
+	margin: 0;
+	padding: 0;
+	width: 45%;
+}
+.ulwrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.network,
+.tools {
+	margin: 0;
+	padding:0;
+}
+.development {
+	border-right: 1px solid #585858;
+}
+.skill .item {
+	font-size: 17px;
+	margin-bottom: 8px;
+}
+.iptables {
+	list-style: url(../icon/pointing.png);
+	margin-left: 1.5em;
+}
+.network li:before,
+.development li:before,
+.tools li:before {
+	display: inline-block;
+	width: 2em;
+}
+.shell:before {
+	  content: "\eb1c";
+	  font-family: Devicon;
+}
+.mysql:before {
+	  content: "\eb61";
+	  font-family: Devicon;
+}
+.php:before {
+	  content: "\eb71";
+	  font-family: Devicon;
+}
+.html:before {
+	  content: "\e7f7";
+	  font-family: Devicon;
+}
+.css:before {
+	  content: "\e679";
+	  font-family: Devicon;
+}
+.javascript:before {
+	  content: "\e845";
+	  font-family: Devicon;
+}
+.wordpress:before {
+	  content: "\ebfd";
+	  font-family: Devicon;
+}
+.nginx:before {
+	  content: "\e615";
+	  font-family: Devicon;
+}
+.apache:before {
+	  content: "\e629";
+	  font-family: Devicon;
+}
+.debian:before {
+	  content: "\e67f";
+	  font-family: Devicon;
+}
+.vim:before {
+	  content: "\ebf3";
+	  font-family: Devicon;
+}
+.git:before {
+	  content: "\e7a7";
+	  font-family: Devicon;
+}
+
+/* ==========================================================================
+Contact
+========================================================================== */
+
+
+.mail {
+	margin: 20px 0 0 0;
+}
+.social-links {
+	margin: 0;
+}
+.social-links ul {
+	margin-left: 10%;
+}
+.social-links, .mail {
+	padding: 10px;
+}
+.social-links li {
+	line-height: 25px;
+	margin: 10px;	
+}
+.social-links img {
+	height: 32px;
+}
+.contact form {
+	width: 90%;
+	margin: 0 5%;
+}
+.mail form textarea,
+.mail form input {
+	width: 100%;
+	border-radius:15px;
+	padding: 6px 0;
+	margin:0; 
+}
+.mail form textarea,
+.mail form input {
+	opacity: 0.5;
+}
+.mail form textarea:hover,
+.mail form textarea:focus,
+.mail form input:hover,
+.mail form input:focus {
+	opacity: 1;
+	transition: 0.75s;
+}
+.mail button {
+	width: 100%;
+	margin: 0;	
+}
+.mail form textarea {
+	height: 150px;
+}
+
+/* BLOG */
+.blogindex hr {
+	width: 80%;
+	margin: 15px 10%;
+}
+.blogindex {
+	padding:20px;
+}
+.blogarticle {
+	padding: 20px 20px 0 20px;
+}
+.tags { 
+	display: inline;
+	margin-bottom: 15px;
+}
+.tags a {
+	color: #1A0DAB;
+}
+.tags a:hover {
+	color: #1A0DAB;
+	text-decoration: underline;
+}
+.pagination {
+}
+.older {
+	color: #b30808 !important; 
+}
+.older { 
+	text-decoration: none !important;
+}
+.paginationwrap {
+	width:100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: no-wrap;
+	justify-content: space-around;
+}
+.blogindex h3 {
+	margin: 0;
+}
+.articletitle {
+ 	font-weight: bold;
+}
+.articletitle,
+.excerpt,
+.tags {
+	margin: 0;
+}
+
+/* ##################################################################### */
+/* ##########################   SMARTPHONE   ########################### */
+/* ##################################################################### */
+@media screen and (min-width: 480px) {
+.index,
+.portfolio,
+.contact,
+.about {
+	margin-top: 80px;
+}
+.skillfigure {
+	margin: 0 0 20px 0;
+}
+}
+
+/* ##################################################################### */
+/* ############################   TABLETS   ############################ */
+/* ##################################################################### */
+
+@media screen and (min-width:768px) {
+        /* Menu */
+header {
+	display: block;
+}
+.mobilemenu {
+	display: none;
+}
+
+
+	/* About */
+.left {
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+.left > figure {
+	flex: 1;
+}
+.skillfigure {
+	margin-bottom: 0;
+}
+.right {
+	width: 35%;
+}
+.wiki {
+	margin-top: 0;
+}
+.twitter {
+	display: block;
+}
+.mobilelinks {
+	display: none;
+}
+
+/* Portfolio */
+.thumbnails {
+	width: 40vw;
+	height: 40vw;
+}
+/* Contact */
+	.mail {
+		width: 60%;
+		margin-top: 0;
+	}
+	.social-links {
+	}
+}
+
+
+
+
+/* ##################################################################### */
+/* ############################   DESKTOPS   ########################### */
+/* ##################################################################### */
+
+@media screen and (min-width: 992px) {
+	main {
+		width: 70%;
+		margin: 80px 15%;
+	}
+
+	.navbardefault input {
+		display: inline-block; 
+	}
+	.thumbnails figcaption {
+		visibility: hidden; 
+	}
+	.thumbnails:hover figcaption {
+		display: block;
+		transition: 1s;
+		visibility: visible;
+		border-top: 1px solid #424242;
+	}
+	.thumbnails:hover {
+		border: 1px solid #424242;
+		transition: 1s;
+	}
+	.thumbnails {
+		width: 20vw;
+		height: 20vw;
+	}
+}
+
+/* ##################################################################### */
+/* ########################   LARGE DESKTOPS   ######################### */
+/* ##################################################################### */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
