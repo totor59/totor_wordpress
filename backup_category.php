@@ -51,11 +51,17 @@ wp_nav_menu( $defaults );
 		<figcaption>Catégorie: <?php single_cat_title(); ?></figcaption>
 
 <?php 
-$args = array ( 'category' => 4, 'posts_per_page' => 5);
+$catID = get_query_var("cat"); // On récupère l'ID de la catégorie
+$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+$args = array (
+	'category' => 5,
+	'posts_per_page' => 500,	
+	'paged' => $paged
+);
+$wp_query = new WP_Query( $args );
 $myposts = get_posts( $args );
-foreach( $myposts as $post ) :	setup_postdata($post);
+foreach( $myposts as $post ) :	setup_postdata($post); 
 ?>
-
 
 <!-- THE LOOP -->
 <!-- Article preview -->
@@ -65,9 +71,31 @@ foreach( $myposts as $post ) :	setup_postdata($post);
 		<p class="tags postmetadata">Posté dans <?php the_category(', '); ?> | le <?php the_time('j F Y'); ?></p>  
 		<hr>
 		<!-- /Article preview -->	 
-
 <?php endforeach; ?>
+<!-- Pagination -->
+<div class="pagination">
+<?php
+echo "catID = ".$catID."<br>" ;
+$postCount = $wp_query->found_posts;
+echo "postCount = ".$postCount."<br>";
+if ($postCount > 5) {
+$big = 999999999; // need an unlikely integer
+echo paginate_links( array(
+	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	'format' => '?paged=%#%',
+	'current' => max( 1, get_query_var('paged') ),
+	'total' => $wp_query->max_num_pages
+) );
+}
+?>
+</div>
+<!-- /Pagination -->
 
 
+
+</figure>
+
+</main>
+	  <!-- /Main content -->
 
 <?php include("footer.php"); 

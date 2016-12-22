@@ -70,7 +70,9 @@ if ($wp_query->have_posts() ) : while ($wp_query->have_posts() ) : $wp_query->th
 		<!-- /Article preview -->
 
 <?php endwhile;?>
-// Pagination
+
+<!-- Pagination -->
+<div class="pagination">
 <?php
 $big = 999999999; // need an unlikely integer
 
@@ -81,6 +83,8 @@ echo paginate_links( array(
 	'total' => $wp_query->max_num_pages
 ) );
 ?>
+</div>
+<!-- /Pagination -->
 
 <?php  else: ?>
 

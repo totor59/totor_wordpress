@@ -670,6 +670,7 @@ Contact
 .tags { 
 	display: inline;
 	margin-bottom: 15px;
+	font-weight: bold; 
 }
 .tags a {
 	color: #1A0DAB;
@@ -678,17 +679,12 @@ Contact
 	color: #1A0DAB;
 	text-decoration: underline;
 }
-.older {
-	color: #b30808 !important; 
-}
-.older { 
-	text-decoration: none !important;
-}
 .blogindex h3 {
 	margin: 0;
 }
 .articletitle {
  	font-weight: bold;
+	color: #006621;
 }
 .articletitle,
 .excerpt,
@@ -697,9 +693,21 @@ Contact
 }
 
 /* PAGINATION */
-
-
-
+.pagination {
+	text-align: center;
+}
+.page-numbers {
+	border: 1px solid #4285F4; 
+	color: #4285F4;
+	padding: 0 10px;
+	font-size: 16px;
+	margin: 0 -2px;
+}
+.current {
+	color :#fff;
+	background-color: #4285F4;
+	font-weight: bold;
+}
 
 /* ##################################################################### */
 /* ##########################   SMARTPHONE   ########################### */
