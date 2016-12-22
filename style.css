@@ -678,20 +678,11 @@ Contact
 	color: #1A0DAB;
 	text-decoration: underline;
 }
-.pagination {
-}
 .older {
 	color: #b30808 !important; 
 }
 .older { 
 	text-decoration: none !important;
-}
-.paginationwrap {
-	width:100%;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: no-wrap;
-	justify-content: space-around;
 }
 .blogindex h3 {
 	margin: 0;
@@ -704,6 +695,11 @@ Contact
 .tags {
 	margin: 0;
 }
+
+/* PAGINATION */
+
+
+
 
 /* ##################################################################### */
 /* ##########################   SMARTPHONE   ########################### */

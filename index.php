@@ -53,14 +53,14 @@ wp_nav_menu( $defaults );
 <!-- THE LOOP -->
 
 <?php
-$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 $args = array(
 	'post_type' => 'post',
 	'posts_per_page' => 5,
-	'paged' => $paged
+	'paged' => $paged,
 );
-$actu = new WP_Query( $args);
-if ($actu->have_posts() ) : while ($actu->have_posts() ) : $actu->the_post(); ?>
+$wp_query = new WP_Query( $args);
+if ($wp_query->have_posts() ) : while ($wp_query->have_posts() ) : $wp_query->the_post(); ?>
 		<!-- Article preview -->
 		<br>
 		<h3><a class="job articletitle" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -70,16 +70,17 @@ if ($actu->have_posts() ) : while ($actu->have_posts() ) : $actu->the_post(); ?>
 		<!-- /Article preview -->
 
 <?php endwhile;?>
-<?php if ($actu->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
-  <nav class="prev-next-posts paginationwrap">
-    <div class="prev-posts-link older">
-     <a href="<?php echo get_next_posts_link('', $actu->max_num_pages ); // display older posts link ?>">Older</a>
-    </div>
-    <div class="next-posts-link older">
-     <a href="<?php echo get_previous_posts_link( 'Newer' ); // display newer posts link ?>">Newer</a>
-    </div>
-  </nav>
-<?php } ?>	
+// Pagination
+<?php
+$big = 999999999; // need an unlikely integer
+
+echo paginate_links( array(
+	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	'format' => '?paged=%#%',
+	'current' => max( 1, get_query_var('paged') ),
+	'total' => $wp_query->max_num_pages
+) );
+?>
 
 <?php  else: ?>
 
